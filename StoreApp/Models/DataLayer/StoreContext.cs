@@ -39,8 +39,6 @@ namespace StoreApp.Models.DataLayer
         {
             modelBuilder.Entity<Customer>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.HasOne(d => d.UserType)
                     .WithMany(p => p.Customer)
                     .HasForeignKey(d => d.UserTypeId)
@@ -50,8 +48,6 @@ namespace StoreApp.Models.DataLayer
 
             modelBuilder.Entity<Invoice>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Invoice)
                     .HasForeignKey(d => d.CustomerId)
@@ -61,8 +57,6 @@ namespace StoreApp.Models.DataLayer
 
             modelBuilder.Entity<InvoiceItem>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.HasOne(d => d.Invoice)
                     .WithMany(p => p.InvoiceItem)
                     .HasForeignKey(d => d.InvoiceId)
@@ -78,23 +72,11 @@ namespace StoreApp.Models.DataLayer
 
             modelBuilder.Entity<Product>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Product)
                     .HasForeignKey(d => d.CategoryId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Products_Categories");
-            });
-
-            modelBuilder.Entity<ProductCategory>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-            });
-
-            modelBuilder.Entity<UserTypes>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
             });
 
             OnModelCreatingPartial(modelBuilder);

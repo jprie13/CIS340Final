@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StoreApp
 {
-    public partial class Form1 : Form
+    public partial class CustomerHomeForm : Form
     {
-        public Form1()
+        public CustomerHomeForm()
         {
             InitializeComponent();
         }
