@@ -10,5 +10,13 @@ namespace StoreApp
     {
         public const int ADD = 1;
         public const int EDIT = 2;
+
+        public enum UserTypes {
+            ADMIN = 1,
+            STANDARD,
+            SENIOR,
+            VETERAN,
+            EDUCATOR
+        };
     }
 }

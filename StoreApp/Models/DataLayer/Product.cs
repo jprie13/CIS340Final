@@ -25,6 +25,7 @@ namespace StoreApp.Models.DataLayer
         public decimal Price { get; set; }
         [Column("CategoryID")]
         public int CategoryId { get; set; }
+        public int IsActive { get; set; }
 
         [ForeignKey(nameof(CategoryId))]
         [InverseProperty(nameof(ProductCategory.Product))]

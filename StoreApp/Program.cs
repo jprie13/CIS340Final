@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StoreApp.Models.DataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace StoreApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new LoginForm(new StoreContext()));
         }
     }
 }

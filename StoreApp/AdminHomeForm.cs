@@ -21,8 +21,8 @@ namespace StoreApp
 
         private void productsbtn_Click(object sender, EventArgs e)
         {
-            Form userForm = new ProductsForm();
-            userForm.Show();
+            Form productsForm = new ProductsForm();
+            productsForm.Show();
         }
 
         private void ProductsForm_FormClosing(Object sender, FormClosingEventArgs e)
@@ -31,6 +31,10 @@ namespace StoreApp
             Application.OpenForms[0].Show();
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UsersForm usersForm = new UsersForm();
+            usersForm.Show();
+        }
     }
 }

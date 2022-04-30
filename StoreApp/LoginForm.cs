@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StoreApp.Models.DataLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +13,33 @@ namespace StoreApp
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+        private StoreContext _context;
+        public LoginForm(StoreContext context)
         {
             InitializeComponent();
+            _context = context;
         }
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
-            var homeForm = new AdminHomeForm();
-            homeForm.Show();
-            this.Hide();
+            Customer user = _context.Customer.FirstOrDefault(x => x.Username == usernametxt.Text && x.Password == passwordtxt.Text);
+            if (user == null)
+            {
+                MessageBox.Show("Invalid username or password combination");
+            }
+            else if (user.UserTypeId == ((int)Constants.UserTypes.ADMIN))
+            {
+                var homeForm = new AdminHomeForm();
+                homeForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                var customerHomeForm = new CustomerHomeForm();
+                customerHomeForm.Show();
+                this.Hide();
+            }
+            
         }
     }
 }
