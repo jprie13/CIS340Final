@@ -42,6 +42,7 @@ namespace StoreApp
             this.shopbtn.TabIndex = 5;
             this.shopbtn.Text = "Shop";
             this.shopbtn.UseVisualStyleBackColor = true;
+            this.shopbtn.Click += new System.EventHandler(this.shopbtn_Click);
             // 
             // invoicebtn
             // 
@@ -51,6 +52,7 @@ namespace StoreApp
             this.invoicebtn.TabIndex = 6;
             this.invoicebtn.Text = "View History";
             this.invoicebtn.UseVisualStyleBackColor = true;
+            this.invoicebtn.Click += new System.EventHandler(this.invoicebtn_Click);
             // 
             // exitBtn
             // 
@@ -61,6 +63,7 @@ namespace StoreApp
             this.exitBtn.TabIndex = 7;
             this.exitBtn.Text = "Log out";
             this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // CustomerHomeForm
             // 
@@ -73,6 +76,7 @@ namespace StoreApp
             this.Controls.Add(this.shopbtn);
             this.Name = "CustomerHomeForm";
             this.Text = "ShopEasy";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerHomeForm_FormClosing);
             this.ResumeLayout(false);
 
         }

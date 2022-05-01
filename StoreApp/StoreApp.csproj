@@ -246,6 +246,12 @@
     <Compile Include="AddToCartForm.Designer.cs">
       <DependentUpon>AddToCartForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckoutForm.Designer.cs">
+      <DependentUpon>CheckoutForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Constants.cs" />
     <Compile Include="AdminHomeForm.cs">
       <SubType>Form</SubType>
@@ -310,11 +316,20 @@
     <Compile Include="ShopForm.Designer.cs">
       <DependentUpon>ShopForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserShopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserShopForm.Designer.cs">
+      <DependentUpon>UserShopForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddToCartForm.resx">
       <DependentUpon>AddToCartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminHomeForm.resx">
       <DependentUpon>AdminHomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckoutForm.resx">
+      <DependentUpon>CheckoutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerHomeForm.resx">
       <DependentUpon>CustomerHomeForm.cs</DependentUpon>
@@ -348,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShopForm.resx">
       <DependentUpon>ShopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserShopForm.resx">
+      <DependentUpon>UserShopForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

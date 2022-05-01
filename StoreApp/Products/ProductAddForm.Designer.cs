@@ -41,6 +41,7 @@ namespace StoreApp
             // 
             // ProductCategorycbo
             // 
+            this.ProductCategorycbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductCategorycbo.FormattingEnabled = true;
             this.ProductCategorycbo.Location = new System.Drawing.Point(30, 200);
             this.ProductCategorycbo.Name = "ProductCategorycbo";

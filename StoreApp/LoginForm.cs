@@ -29,13 +29,13 @@ namespace StoreApp
             }
             else if (user.UserTypeId == ((int)Constants.UserTypes.ADMIN))
             {
-                var homeForm = new AdminHomeForm();
+                var homeForm = new AdminHomeForm(user);
                 homeForm.Show();
                 this.Hide();
             }
             else
             {
-                var customerHomeForm = new CustomerHomeForm();
+                var customerHomeForm = new CustomerHomeForm(user);
                 customerHomeForm.Show();
                 this.Hide();
             }

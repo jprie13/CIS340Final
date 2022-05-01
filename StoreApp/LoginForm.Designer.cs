@@ -64,7 +64,7 @@ namespace StoreApp
             // 
             // loginbtn
             // 
-            this.loginbtn.Location = new System.Drawing.Point(19, 182);
+            this.loginbtn.Location = new System.Drawing.Point(19, 194);
             this.loginbtn.Name = "loginbtn";
             this.loginbtn.Size = new System.Drawing.Size(303, 49);
             this.loginbtn.TabIndex = 3;
@@ -95,7 +95,7 @@ namespace StoreApp
             this.AcceptButton = this.loginbtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 243);
+            this.ClientSize = new System.Drawing.Size(341, 255);
             this.Controls.Add(this.usernamelbl);
             this.Controls.Add(this.passwordlbl);
             this.Controls.Add(this.loginbtn);

@@ -51,7 +51,7 @@ namespace StoreApp
             {
                 MessageBox.Show("Invalid price");
             }
-            else if (ProductCategorycbo.SelectedItem == null)
+            else if (string.IsNullOrWhiteSpace(ProductCategorycbo.Text))
             {
                 MessageBox.Show("Invalid category");
             }
@@ -61,7 +61,7 @@ namespace StoreApp
                 {
                     Name = ProductNametxt.Text,
                     Price = price,
-                    Category = _context.ProductCategory.First(x => x.Name == ProductCategorycbo.SelectedItem.ToString()),
+                    Category = _context.ProductCategory.First(x => x.Name == ProductCategorycbo.Text.ToString()),
                     IsActive = 1
                 };
 

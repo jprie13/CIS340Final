@@ -109,6 +109,7 @@ namespace StoreApp
             // 
             // typecbo
             // 
+            this.typecbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typecbo.FormattingEnabled = true;
             this.typecbo.Location = new System.Drawing.Point(23, 179);
             this.typecbo.Name = "typecbo";

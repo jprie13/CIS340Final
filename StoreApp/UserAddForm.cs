@@ -18,10 +18,13 @@ namespace StoreApp
     {
         private StoreContext _context;
         private int SelectedId;
-        public UserAddForm(int id)
+        private UsersForm _parent;
+        public UserAddForm(int id, Form parent)
         {
             _context = new StoreContext();
             InitializeComponent();
+
+            _parent = (UsersForm)parent;
 
             typecbo.Items.AddRange(_context.UserTypes.Where(x => x.Id > (int)Constants.UserTypes.ADMIN).Select(x => x.Name).ToArray());
 
@@ -83,6 +86,7 @@ namespace StoreApp
                         user.UserType = _context.UserTypes.First(x => x.Name == typecbo.SelectedItem.ToString());
                     }
                     _context.SaveChanges();
+                    _parent.updateGrid();
                     Close();
                 }
                 else

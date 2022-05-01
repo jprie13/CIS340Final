@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StoreApp.Models.DataLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,33 @@ namespace StoreApp
 {
     public partial class CustomerHomeForm : Form
     {
-        public CustomerHomeForm()
+        private Customer _user;
+        public CustomerHomeForm(Customer user)
         {
             InitializeComponent();
+            _user = user;
+        }
+
+        private void CustomerHomeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.OpenForms[0].Show();
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void shopbtn_Click(object sender, EventArgs e)
+        {
+            var shopForm = new UserShopForm(_user);
+            shopForm.Show();
+        }
+
+        private void invoicebtn_Click(object sender, EventArgs e)
+        {
+            var invoiceForm = new InvoiceForm(_user);
+            invoiceForm.Show();
         }
     }
 }

@@ -21,6 +21,8 @@ namespace StoreApp.Models.DataLayer
         public int CustomerId { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime PurchaseDate { get; set; }
+        [Column(TypeName = "decimal(18, 0)")]
+        public decimal Total { get; set; }
 
         [ForeignKey(nameof(CustomerId))]
         [InverseProperty("Invoice")]

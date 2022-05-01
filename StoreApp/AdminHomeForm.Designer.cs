@@ -44,6 +44,7 @@ namespace StoreApp
             this.exitBtn.TabIndex = 2;
             this.exitBtn.Text = "Log out";
             this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // button1
             // 
@@ -73,6 +74,7 @@ namespace StoreApp
             this.invoicebtn.TabIndex = 5;
             this.invoicebtn.Text = "View Invoices";
             this.invoicebtn.UseVisualStyleBackColor = true;
+            this.invoicebtn.Click += new System.EventHandler(this.invoicebtn_Click);
             // 
             // AdminHomeForm
             // 

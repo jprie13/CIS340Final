@@ -26,7 +26,7 @@ namespace StoreApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form addForm = new UserAddForm(0);
+            Form addForm = new UserAddForm(0, this);
             addForm.Show();
         }
 
@@ -37,7 +37,7 @@ namespace StoreApp
                 string IDstring = usersdvg.SelectedRows[0].Cells[0].Value.ToString();
                 if (Int32.TryParse(IDstring, out int id))
                 {
-                    Form addForm = new UserAddForm(id);
+                    Form addForm = new UserAddForm(id, this);
                     addForm.Show();
                 }
                 else
@@ -137,7 +137,7 @@ namespace StoreApp
             }
         }
 
-        private void updateGrid(string searchText = "")
+        public void updateGrid(string searchText = "")
         {
             usersdvg.DataSource = _context.Customer.Select(x => new { Id = x.Id, Name = x.FirstName + " " + x.LastName, Username = x.Username, Email = x.Email, Phone = x.Phone, Type = x.UserType.Name }).ToList();
             if (!string.IsNullOrWhiteSpace(searchText))
