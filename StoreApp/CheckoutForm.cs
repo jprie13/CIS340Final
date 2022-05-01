@@ -24,11 +24,11 @@ namespace StoreApp
             _context = new StoreContext();
 
             _items = items;
-            cartdvg.DataSource = new BindingSource() { DataSource = items.Select(x => new { Product = x.Product.Name, Quantity = x.Quantity, Price = x.ProductPrice }) };
+            cartdvg.DataSource = new BindingSource() { DataSource = items.Select(x => new { Product = x.Product.Name, Quantity = x.Quantity, Price = x.ProductPrice.ToString("C2") }) };
+            _user = user;
 
             calculateTotalFields(items);
-
-            _user = user;
+            
             _parent = parent;
         }
 
@@ -41,16 +41,25 @@ namespace StoreApp
         {
             var subtotal = 0.0m;
 
+            decimal discount = 0;
+
             foreach (InvoiceItem item in items)
             {
+                if (_user.UserTypeId == (int)Constants.UserTypes.EDUCATOR
+                    && item.Product.CategoryId == _context.ProductCategory.First(x => x.Name == "Books").Id)
+                {
+                    discount += item.Quantity * item.ProductPrice * 0.1m;
+                }
                 subtotal += item.ProductPrice * item.Quantity;
             }
             subtotaldisplaylbl.Text = subtotal.ToString("C2");
-            var multiplier = 0;
-            var discount = multiplier * subtotal;
+
             discountdisplaylbl.Text = discount.ToString("C2");
 
-            var total = subtotal - discount;
+            decimal tax = calculateTax(subtotal - discount, _user);
+            taxDisplaylbl.Text = tax.ToString("C2");
+
+            var total = subtotal - discount + tax;
             _total = total;
             totaldisplaylbl.Text = total.ToString("C2");
         }
@@ -82,6 +91,16 @@ namespace StoreApp
             MessageBox.Show("You will receive email confirmation of your purchase shortly. Please confirm that the payment information listed is correct for your order to go through.");
             _parent.Close();
             Close();
+        }
+
+        private decimal calculateTax(decimal subtotal, Customer user)
+        {
+            decimal taxRate = 0.055m;
+            if (user.UserTypeId == (int)Constants.UserTypes.SENIOR || user.UserTypeId == (int)Constants.UserTypes.VETERAN)
+            {
+                taxRate = 0;
+            }
+            return subtotal * taxRate;
         }
     }
 }

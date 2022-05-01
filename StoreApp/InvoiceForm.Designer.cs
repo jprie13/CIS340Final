@@ -62,6 +62,7 @@ namespace StoreApp
             this.exitbtn.TabIndex = 1;
             this.exitbtn.Text = "Back";
             this.exitbtn.UseVisualStyleBackColor = true;
+            this.exitbtn.Click += new System.EventHandler(this.exitbtn_Click);
             // 
             // invoicedvg
             // 
@@ -156,7 +157,7 @@ namespace StoreApp
             this.Controls.Add(this.exitbtn);
             this.Controls.Add(this.titlelbl);
             this.Name = "InvoiceForm";
-            this.Text = "ShopForm";
+            this.Text = "Purchase History";
             ((System.ComponentModel.ISupportInitialize)(this.invoicedvg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailsdvg)).EndInit();
             this.ResumeLayout(false);

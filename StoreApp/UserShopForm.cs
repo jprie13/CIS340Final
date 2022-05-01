@@ -41,7 +41,7 @@ namespace StoreApp
 
         public void updateProductsGrid()
         {
-            var data = _context.Product.Where(p => p.IsActive == 1).Select(x => new {Id = x.Id, Name = x.Name, Price = x.Price, Category = x.Category.Name}).ToList();
+            var data = _context.Product.Where(p => p.IsActive == 1).Select(x => new {Id = x.Id, Name = x.Name, Price = x.Price.ToString("C2"), Category = x.Category.Name}).ToList();
             if (!string.IsNullOrWhiteSpace(searchtxt.Text))
             {
                 data = data.Where(p => p.Name.Contains(searchtxt.Text.Trim())).ToList();
@@ -58,7 +58,7 @@ namespace StoreApp
         {
             if (cartItems.Count != 0)
             {
-                cartdvg.DataSource = new BindingSource() { DataSource = cartItems.Select(x => new { Product = x.Product.Name, Quantity = x.Quantity, Price = x.ProductPrice }) };
+                cartdvg.DataSource = new BindingSource() { DataSource = cartItems.Select(x => new { Product = x.Product.Name, Quantity = x.Quantity, Price = x.ProductPrice.ToString("C2") }) };
                 var total = 0.0m;
                 foreach (InvoiceItem item in cartItems) {
                     total += item.ProductPrice * item.Quantity;

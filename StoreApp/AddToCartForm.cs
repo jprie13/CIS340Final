@@ -27,7 +27,7 @@ namespace StoreApp
             selectedProduct = _context.Product.Include(x => x.Category).First(p => p.Id == id);
 
             namedisplaylbl.Text = selectedProduct.Name;
-            pricedisplaylbl.Text = selectedProduct.Price.ToString();
+            pricedisplaylbl.Text = selectedProduct.Price.ToString("C2");
             categorydisplaylbl.Text = selectedProduct.Category.Name;
         }
 

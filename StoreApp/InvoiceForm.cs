@@ -86,5 +86,10 @@ namespace StoreApp
         {
             updateInvoicesGrid();
         }
+
+        private void exitbtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
