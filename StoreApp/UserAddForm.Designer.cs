@@ -89,7 +89,7 @@ namespace StoreApp
             this.phonetxt.Location = new System.Drawing.Point(339, 118);
             this.phonetxt.Name = "phonetxt";
             this.phonetxt.Size = new System.Drawing.Size(206, 26);
-            this.phonetxt.TabIndex = 10;
+            this.phonetxt.TabIndex = 12;
             // 
             // emaillbl
             // 
@@ -105,7 +105,7 @@ namespace StoreApp
             this.emailtxt.Location = new System.Drawing.Point(23, 118);
             this.emailtxt.Name = "emailtxt";
             this.emailtxt.Size = new System.Drawing.Size(310, 26);
-            this.emailtxt.TabIndex = 12;
+            this.emailtxt.TabIndex = 10;
             // 
             // typecbo
             // 

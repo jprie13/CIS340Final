@@ -162,10 +162,10 @@ namespace StoreApp.Products
 
         public void updateGrid(string searchText = "")
         {
-            productsdvg.DataSource = _context.Product.Select(x => new { Id = x.Id, Name = x.Name, Price = x.Price, Category = x.Category.Name, Active = x.IsActive }).ToList();
+            productsdvg.DataSource = _context.Product.Select(x => new { Id = x.Id, Name = x.Name, Price = x.Price.ToString("C2"), Category = x.Category.Name, Active = x.IsActive }).ToList();
             if (!string.IsNullOrWhiteSpace(searchText))
             {
-                productsdvg.DataSource = _context.Product.Select(x => new { Id = x.Id, Name = x.Name, Price = x.Price, Category = x.Category.Name, Active = x.IsActive }).Where(x => x.Name.Contains(searchText.Trim())).ToList();
+                productsdvg.DataSource = _context.Product.Select(x => new { Id = x.Id, Name = x.Name, Price = x.Price.ToString("C2"), Category = x.Category.Name, Active = x.IsActive }).Where(x => x.Name.Contains(searchText.Trim())).ToList();
             }
         }
 

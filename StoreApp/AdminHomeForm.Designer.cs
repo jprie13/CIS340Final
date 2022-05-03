@@ -33,12 +33,13 @@ namespace StoreApp
             this.button1 = new System.Windows.Forms.Button();
             this.productsbtn = new System.Windows.Forms.Button();
             this.invoicebtn = new System.Windows.Forms.Button();
+            this.passbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // exitBtn
             // 
             this.exitBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.exitBtn.Location = new System.Drawing.Point(15, 224);
+            this.exitBtn.Location = new System.Drawing.Point(15, 276);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(359, 34);
             this.exitBtn.TabIndex = 2;
@@ -76,12 +77,23 @@ namespace StoreApp
             this.invoicebtn.UseVisualStyleBackColor = true;
             this.invoicebtn.Click += new System.EventHandler(this.invoicebtn_Click);
             // 
+            // passbtn
+            // 
+            this.passbtn.Location = new System.Drawing.Point(15, 197);
+            this.passbtn.Name = "passbtn";
+            this.passbtn.Size = new System.Drawing.Size(359, 50);
+            this.passbtn.TabIndex = 6;
+            this.passbtn.Text = "Change Password";
+            this.passbtn.UseVisualStyleBackColor = true;
+            this.passbtn.Click += new System.EventHandler(this.passbtn_Click);
+            // 
             // AdminHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.exitBtn;
-            this.ClientSize = new System.Drawing.Size(391, 282);
+            this.ClientSize = new System.Drawing.Size(391, 322);
+            this.Controls.Add(this.passbtn);
             this.Controls.Add(this.invoicebtn);
             this.Controls.Add(this.productsbtn);
             this.Controls.Add(this.button1);
@@ -98,6 +110,7 @@ namespace StoreApp
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button productsbtn;
         private System.Windows.Forms.Button invoicebtn;
+        private System.Windows.Forms.Button passbtn;
     }
 }
 

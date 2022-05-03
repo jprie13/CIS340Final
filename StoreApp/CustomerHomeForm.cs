@@ -41,5 +41,11 @@ namespace StoreApp
             var invoiceForm = new InvoiceForm(_user);
             invoiceForm.Show();
         }
+
+        private void passbtn_Click(object sender, EventArgs e)
+        {
+            var passForm = new ChangePasswordForm(_user);
+            passForm.Show();
+        }
     }
 }
