@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StoreApp
 {
-    static class Constants
+    public static class Constants
     {
         public const int ADD = 1;
         public const int EDIT = 2;

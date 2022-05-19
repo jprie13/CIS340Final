@@ -56,7 +56,7 @@ namespace StoreApp
 
             discountdisplaylbl.Text = discount.ToString("C2");
 
-            decimal tax = calculateTax(subtotal - discount, _user);
+            decimal tax = TotalsHelper.calculateTax(subtotal - discount, _user);
             taxDisplaylbl.Text = tax.ToString("C2");
 
             var total = subtotal - discount + tax;
@@ -91,16 +91,6 @@ namespace StoreApp
             MessageBox.Show("You will receive email confirmation of your purchase shortly. Please confirm that the payment information listed is correct for your order to go through.");
             _parent.Close();
             Close();
-        }
-
-        private decimal calculateTax(decimal subtotal, Customer user)
-        {
-            decimal taxRate = 0.055m;
-            if (user.UserTypeId == (int)Constants.UserTypes.SENIOR || user.UserTypeId == (int)Constants.UserTypes.VETERAN)
-            {
-                taxRate = 0;
-            }
-            return subtotal * taxRate;
         }
     }
 }

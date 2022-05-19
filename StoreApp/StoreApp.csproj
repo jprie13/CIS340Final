@@ -284,6 +284,7 @@
     <Compile Include="Models\DataLayer\ProductCategory.cs" />
     <Compile Include="Models\DataLayer\StoreContext.cs" />
     <Compile Include="Models\DataLayer\UserTypes.cs" />
+    <Compile Include="TotalsHelper.cs" />
     <Compile Include="UserAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
