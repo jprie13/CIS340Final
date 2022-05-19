@@ -65,7 +65,7 @@ namespace StoreApp
                     IsActive = 1
                 };
 
-                if (SelectedId != 0)
+                if (SelectedId == 0)
                 {
                     _context.Product.Add(product);
                 }
